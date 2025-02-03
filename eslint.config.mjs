@@ -19,9 +19,7 @@ const eslintConfig = [
       '@next/next/no-img-element ':'off',
       '@typescript-eslint/no-empty-object-type':'off',
       '@typescript-eslint/no-unused-expressions':'off',
-      '@typescript-eslint/ban-ts-comment': 'off',
-      '@typescript-eslint/no-explicit-any': 'off',
-      'react/jsx-filename-extension': [1, { 'ignore': ['dock.tsx'] }]
+      
     },
   },
 ];
