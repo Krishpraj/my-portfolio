@@ -8,12 +8,11 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { Dock, DockIcon } from "@/components/ui/dock";
 import { Particles } from "@/components/ui/particles";
 import { Separator } from "@/components/ui/separator";
-import { MorphingText, useMorphingText } from "@/components/ui/morphing-text";
+import { MorphingText,  } from "@/components/ui/morphing-text";
 import { ScrollButton } from "@/components/ui/ScrollButton";
 import Resume from "@/components/ui/resume-section";
 import { TextReveal } from "@/components/ui/text-reveal";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
-import Projects from "@/components/ui/projects";
 import GetInTouch from "@/components/ui/contact";
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
