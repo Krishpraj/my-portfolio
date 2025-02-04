@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 const projects = [
   { name: "HERO SECTION", id: "hero-section" },
   { name: "INTRODUCTION", id: "introduction" },
-  { name: "RESUME-SECTION", id: "resume-section" },
-  { name: "PROJECTS-SECTION", id: "personal-projects" },
-  { name: "CONTACT_SECTION", id: "contact-section" },
+  { name: "RESUME SECTION", id: "resume-section" },
+  { name: "PROJECTS SECTION", id: "personal-projects" },
+  { name: "CONTACT SECTION", id: "contact-section" },
 ];
 
 export default function ProjectList({ darkMode }: { darkMode: boolean }) {
