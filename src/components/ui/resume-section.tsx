@@ -35,7 +35,10 @@ const Resume: React.FC<ResumeProps> = ({ darkMode }) => {
     <div className={`${darkMode ? "bg-black text-white" : "bg-white text-gray-900"} max-w-2xl mx-auto p-6 min-h-screen font-mono`}>
       {/* Experience Section */}
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">Experience</h2>
+      <h2 className="text-2xl font-semibold mb-4 flex justify-between">
+          <span>[EXPERIENCE]</span>
+          <span>[1]</span>
+        </h2>
         <div className="flex items-center space-x-4 mb-4">
           <label htmlFor="icon-upload" className="w-16 h-16 rounded-full bg-gray-300 dark:bg-gray-300 cursor-pointer">
             <img src={freelanceWebDeveloperImage.src} alt="Freelance Web Developer" className="w-16 h-16 object-cover rounded-full" />
@@ -81,7 +84,10 @@ const Resume: React.FC<ResumeProps> = ({ darkMode }) => {
       <section className="mb-8"></section>
       {/* Awards and Achievements */}
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">Awards and Achievements</h2>
+      <h2 className="text-2xl font-semibold mb-4 flex justify-between">
+          <span>[AWARDS]</span>
+          <span>[2]</span>
+        </h2>
         <div className="mb-4">
           <h3 className="text-lg font-semibold">DECA Provincial Winner</h3>
           <p className="text-gray-500 dark:text-gray-400">April 2023</p>
@@ -96,7 +102,10 @@ const Resume: React.FC<ResumeProps> = ({ darkMode }) => {
 
       {/* Education */}
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">Education</h2>
+        <h2 className="text-2xl font-semibold mb-4 flex justify-between">
+          <span>[EDUCATION]</span>
+          <span>[3]</span>
+        </h2>
         <div className="flex items-center space-x-4">
           <label htmlFor="icon-upload4" className="w-16 h-16 rounded-full bg-gray-300 dark:bg-gray-600 cursor-pointer">
             <img src={universityOfWaterlooImage.src} alt="University of Waterloo" className="w-16 h-16 object-cover rounded-full" />
@@ -112,7 +121,10 @@ const Resume: React.FC<ResumeProps> = ({ darkMode }) => {
 
       {/* Skills Section */}
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">Skills</h2>
+      <h2 className="text-2xl font-semibold mb-4 flex justify-between">
+          <span>[SKILLS]</span>
+          <span>[4]</span>
+        </h2>
         <div className="flex flex-wrap gap-2">
           {["React", "Next.js", "TypeScript", "Node.js", "Python", "Go", "Postgres", "Docker", "Kubernetes", "Java", "C++"].map(skill => (
             <span key={skill} className="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full text-sm">
