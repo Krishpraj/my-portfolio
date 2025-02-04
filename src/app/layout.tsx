@@ -1,11 +1,22 @@
 // app/layout.tsx (Server-Side Layout)
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import Loading from "@/app/loading";  // Client-side loading component
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const font1 = IBM_Plex_Mono({
+  variable: "--font-ibm-mono",
+  weight: ['400'],
+  subsets: ["latin"],
+});
+const font2 = IBM_Plex_Sans({
+  variable: "--font-ibm-sans",
+  weight: ['400'],
   subsets: ["latin"],
 });
 
@@ -26,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <body className={`${font1.variable} ${font2.variable} antialiased`} style={{ fontFamily: "var(--font-ibm-sans)" }}>
         {/* Loading screen component that prevents content from rendering until loading is complete */}
         <Loading />
         {/* Render children (actual content) only after loading is complete */}
