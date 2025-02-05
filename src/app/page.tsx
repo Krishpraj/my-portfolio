@@ -8,11 +8,9 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { Dock, DockIcon } from "@/components/ui/dock";
 import { Particles } from "@/components/ui/particles";
 import { Separator } from "@/components/ui/separator";
-import { MorphingText } from "@/components/ui/morphing-text";
 import { ScrollButton } from "@/components/ui/ScrollButton";
 import Resume from "@/components/ui/resume-section";
 import { TextReveal } from "@/components/ui/text-reveal";
-import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import GetInTouch from "@/components/ui/contact";
 import ProjectList from "@/components/ui/list";
 import Projects from "@/components/ui/projects";
@@ -109,22 +107,27 @@ export default function Home() {
         <h1 className="text-3xl text-[120px] font-bold">About Me</h1>
       </div>
       <div className="flex justify-center">
-        <p className="text-md mt-[50px] text-[40px] mb-[-5px] ">[મારા વિશે]</p>
+        <p className="text-md mt-[50px] text-[40px] mb-[5px] ">[મારા વિશે]</p>
       </div>
       <Resume darkMode={darkMode} />
 
       <motion.div id="personal-projects" className="mt-[100px] text-center"></motion.div>
-      <motion.div id="resume-section" className="mt-[100px] text-center"></motion.div>
       <div className="flex justify-center">
         <h1 className="mt-[200px] text-3xl text-[120px] font-bold">View My Projects</h1>
       </div>
       <div className="flex justify-center">
-        <p className="text-md mt-[50px] text-[40px] mb-[-50px] ">[પ્રોજેક્ટ્સ]</p>
+        <p className="text-md mt-[50px] text-[40px] mb-[-30px] ">[પ્રોજેક્ટ્સ]</p>
       </div>
       <Projects darkMode={darkMode}/>
 
         <motion.div id="contact-section" className="mt-[100px] text-center"></motion.div>
-        <GetInTouch/>
+        <div className="flex justify-center">
+        <h1 className="mt-[200px] text-3xl text-[120px] font-bold">Contact Me</h1>
+      </div>
+        <div className="flex justify-center">
+        <p className="text-md mt-[50px] text-[40px] mb-[-20px] ">[સંપર્ક]</p>
+      </div>
+        <GetInTouch  darkMode={darkMode}/>
       </div>
     
   );
