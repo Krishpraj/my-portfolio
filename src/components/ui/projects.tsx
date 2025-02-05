@@ -103,7 +103,7 @@ export default function Projects({ darkMode }: { darkMode: boolean }) {
               <h3 className="text-xl font-bold flex justify-between items-center">
                 <span className="flex items-center">
                   <span className="w-4 h-4 mr-2" style={{ backgroundColor: projectColors[project.title] }}></span>
-                  [ {project.title} ]
+                  [{project.title}]               ↗ 
                 </span>
                 <span>[{index + 1}]</span>
               </h3>
