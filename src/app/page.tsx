@@ -108,7 +108,7 @@ export default function Home() {
         <h1 className="text-3xl text-[150px] font-bold">About Me</h1>
       </div>
       <div className="flex justify-center">
-        <p className="text-md mt-[50px] text-[40px] mb-[-5px] ">[પોર્ટફોલિયો]</p>
+        <p className="text-md mt-[50px] text-[40px] mb-[-5px] ">[મારા વિશે]</p>
       </div>
       <Resume darkMode={darkMode} />
 
