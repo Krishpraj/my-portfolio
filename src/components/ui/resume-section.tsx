@@ -15,10 +15,7 @@ const skillLevels = [
   { skill: "TypeScript", level: 80 },
   { skill: "Node.js", level: 75 },
   { skill: "Python", level: 95 },
-  { skill: "Go", level: 70 },
-  { skill: "Postgres", level: 80 },
   { skill: "Docker", level: 85 },
-  { skill: "Kubernetes", level: 70 },
   { skill: "Java", level: 80 },
   { skill: "C++", level: 90 },
 ];
@@ -28,19 +25,25 @@ const skillColors: { [key: string]: string } = {
   TypeScript: "#3178C6",
   "Node.js": "#339933",
   Python: "#3776AB",
-  Go: "#00ADD8",
-  Postgres: "#336791",
   Docker: "#2496ED",
-  Kubernetes: "#326CE5",
   Java: "#007396",
   "C++": "#00599C",
 };
+
+const interests = [
+  "Music",
+  "Traveling",
+  "Coding",
+  "Basketball",
+  "Reading",
+  "Gaming"
+];
 
 const Resume: React.FC<ResumeProps> = ({ darkMode }) => {
   const [audienceType, setAudienceType] = useState<'recruiter' | 'engineer' | 'classmate'>('recruiter');
 
   return (
-    <div className={`${darkMode ? "bg-black text-black" : "bg-white text-gray-900"} min-h-screen flex items-center justify-center`}>
+    <div className={`${darkMode ? "bg-black text-white" : "bg-white text-gray-900"} min-h-screen flex items-center justify-center`}>
       <div className="max-w-4xl w-full p-4 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg">
         {/* Header */}
   
@@ -146,6 +149,24 @@ const Resume: React.FC<ResumeProps> = ({ darkMode }) => {
                 </div>
               ))}
             </div>
+
+            <hr className="my-6 border-gray-300 dark:border-gray-700" />
+
+            {/* Interests Section */}
+            <section className="mt-6">
+              <h2 className="text-xl font-semibold mb-4 flex items-center">
+                <span>[ INTERESTS ]</span>
+                <span className="flex-1 mx-2"></span>
+                <span>[3]</span>
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                {interests.map(interest => (
+                  <span key={interest} className="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full text-sm">
+                    {interest}
+                  </span>
+                ))}
+              </div>
+            </section>
           </div>
         </section>
 
@@ -156,7 +177,7 @@ const Resume: React.FC<ResumeProps> = ({ darkMode }) => {
             <h2 className="text-xl font-semibold mb-4 flex items-center">
             <span>[ EDUCATION ]</span>
             <span className="flex-1 mx-2 "></span>
-            <span>[3]</span>
+            <span>[4]</span>
             </h2>
           <div className="flex items-center space-x-3">
             <img src={universityOfWaterlooImage.src} alt="University of Waterloo" className="w-12 h-12 rounded-full" />
