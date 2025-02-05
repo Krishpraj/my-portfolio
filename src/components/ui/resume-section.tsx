@@ -62,7 +62,7 @@ const Resume: React.FC<ResumeProps> = ({ darkMode }) => {
 
   return (
     <div className={`${darkMode ? "bg-black text-white" : "bg-white text-gray-900"} min-h-screen flex items-center justify-center`}>
-      <div className="max-w-4xl w-full p-4 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg">
+      <div className={`max-w-4xl w-full p-4 bg-gray-100 ${darkMode ? "bg-gray-800" : ""} rounded-lg shadow-lg`}>
         {/* Header */}
   
         {/* Audience Selector */}
@@ -87,7 +87,7 @@ const Resume: React.FC<ResumeProps> = ({ darkMode }) => {
             [ For Classmates ]
             </button>
           </div>
-          <p className="mt-2 text-sm text-gray-700 dark:text-gray-300 max-w-md mx-auto">
+          <p className={`mt-2 text-sm text-gray-700 ${darkMode ? "text-gray-300" : ""} max-w-md mx-auto`}>
             {audienceType === 'recruiter' 
               ? "Hi, I'm Krish. A Computer Engineering student with a passion for building innovative, scalable solutions and leveraging cutting-edge technologies to drive impact in real-world applications."
               : audienceType === 'engineer'

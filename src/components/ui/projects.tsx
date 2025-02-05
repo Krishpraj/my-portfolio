@@ -80,54 +80,54 @@ export default function Projects({ darkMode }: { darkMode: boolean }) {
   const projects = selectedCategory === "web" ? webProjects : mobileProjects;
 
   return (
-    <div className={`${darkMode ? "bg-black text-white" : "bg-white text-gray-900"} min-h-screen flex items-center justify-center`}>
-      <div className="max-w-4xl w-full p-4 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg min-h-[80vh]">
+    <div className={`${darkMode ? "bg-black text-black" : "bg-white text-gray-900"} min-h-screen flex items-center justify-center`}>
+      <div className={`max-w-4xl w-full p-4 ${darkMode ? 'bg-gray-800 text-white' : 'bg-gray-100 text-gray-900'} rounded-lg shadow-lg min-h-[80vh]`}>
         <div className="flex justify-center space-x-4 mb-8">
           <button
-            onClick={() => setSelectedCategory("web")}
-            className={`px-4 py-2 ${selectedCategory === "web" ? "underline" : ""}`}
+        onClick={() => setSelectedCategory("web")}
+        className={`px-4 py-2 ${darkMode ? 'text-white' : 'text-gray-900'} ${selectedCategory === "web" ? "underline" : ""}`}
           >
-            [Web Projects]
+        [Web Projects]
           </button>
           <button
-            onClick={() => setSelectedCategory("mobile")}
-            className={`px-4 py-2 ${selectedCategory === "mobile" ? "underline" : ""}`}
+        onClick={() => setSelectedCategory("mobile")}
+        className={`px-4 py-2 ${darkMode ? 'text-white' : 'text-gray-900'} ${selectedCategory === "mobile" ? "underline" : ""}`}
           >
-            [Mobile Projects]
+        [Mobile Projects]
           </button>
         </div>
 
         <div className="projects-list">
           {projects.map((project, index) => (
-            <div key={index} className="mb-8">
-              <h3 className="text-xl font-bold flex justify-between items-center">
-                <span className="flex items-center">
-                  <span className="w-4 h-4 mr-2" style={{ backgroundColor: projectColors[project.title] }}></span>
-                  [{project.title}]               ↗ 
-                </span>
-                <span>[{index + 1}]</span>
-              </h3>
-              <p className="text-sm text-gray-500">{project.date}</p>
-              <ul className="list-disc ml-5 mt-2">
-                {project.description.map((desc, idx) => (
-                  <li key={idx}>{desc}</li>
-                ))}
-              </ul>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {project.technologies.map((tech, idx) => (
-                  <span key={idx} className="px-2 py-1 bg-gray-500 text-white rounded text-xs">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-    
-              {index < projects.length - 1 && <hr className="my-6 border-gray-300 dark:border-gray-700" />}
-            </div>
+        <div key={index} className="mb-8">
+          <h3 className="text-xl font-bold flex justify-between items-center">
+            <span className="flex items-center">
+          <span className="w-4 h-4 mr-2" style={{ backgroundColor: projectColors[project.title] }}></span>
+          [{project.title}] <span className={darkMode ? "text-white" : "text-black"}>↗</span>
+            </span>
+            <span>[{index + 1}]</span>
+          </h3>
+          <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-500'}`}>{project.date}</p>
+          <ul className="list-disc ml-5 mt-2">
+            {project.description.map((desc, idx) => (
+          <li key={idx}>{desc}</li>
+            ))}
+          </ul>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {project.technologies.map((tech, idx) => (
+          <span key={idx} className={`px-2 py-1 ${darkMode ? 'bg-gray-700' : 'bg-gray-500'} text-white rounded text-xs`}>
+            {tech}
+          </span>
+            ))}
+          </div>
+        
+          {index < projects.length - 1 && <hr className={`my-6 ${darkMode ? 'border-gray-700' : 'border-gray-300'}`} />}
+        </div>
           ))}
         </div>
         <div className="flex justify-center mt-8">
           <a href="https://github.com/krishpraj" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faGithub} className="text-3xl text-gray-500 hover:text-gray-700" />
+        <FontAwesomeIcon icon={faGithub} className={`text-3xl ${darkMode ? 'text-gray-400 hover:text-gray-200' : 'text-gray-500 hover:text-gray-700'}`} />
           </a>
         </div>
       </div>
