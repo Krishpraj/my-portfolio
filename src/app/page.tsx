@@ -15,6 +15,7 @@ import { TextReveal } from "@/components/ui/text-reveal";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import GetInTouch from "@/components/ui/contact";
 import ProjectList from "@/components/ui/list";
+import Projects from "@/components/ui/projects";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -105,7 +106,7 @@ export default function Home() {
 
       <motion.div id="resume-section" className="mt-[100px] text-center"></motion.div>
       <div className="flex justify-center">
-        <h1 className="text-3xl text-[150px] font-bold">About Me</h1>
+        <h1 className="text-3xl text-[120px] font-bold">About Me</h1>
       </div>
       <div className="flex justify-center">
         <p className="text-md mt-[50px] text-[40px] mb-[-5px] ">[મારા વિશે]</p>
@@ -113,17 +114,18 @@ export default function Home() {
       <Resume darkMode={darkMode} />
 
       <motion.div id="personal-projects" className="mt-[100px] text-center"></motion.div>
-      <MorphingText texts={["Projects" ,"View My Work"]}/>
-      <div>
-        <div className="flex justify-center">
-          <a href="https://github.com/krishpraj" target="_blank" rel="noopener noreferrer">
-            <InteractiveHoverButton className="text-black mt-[10px]"> Github </InteractiveHoverButton>
-          </a>
-        </div>
+      <motion.div id="resume-section" className="mt-[100px] text-center"></motion.div>
+      <div className="flex justify-center">
+        <h1 className="mt-[200px] text-3xl text-[120px] font-bold">View My Projects</h1>
+      </div>
+      <div className="flex justify-center">
+        <p className="text-md mt-[50px] text-[40px] mb-[-50px] ">[પ્રોજેક્ટ્સ]</p>
+      </div>
+      <Projects darkMode={darkMode}/>
 
         <motion.div id="contact-section" className="mt-[100px] text-center"></motion.div>
         <GetInTouch/>
       </div>
-    </div>
+    
   );
 }
