@@ -82,7 +82,7 @@ export default function Projects({ darkMode }: { darkMode: boolean }) {
   return (
     <div className={`${darkMode ? "bg-black text-black" : "bg-white text-gray-900"} min-h-screen flex items-center justify-center`}>
       <div className={`max-w-4xl w-full p-4 ${darkMode ? 'bg-gray-800 text-white' : 'bg-gray-100 text-gray-900'} rounded-lg shadow-lg min-h-[80vh]`}>
-        <div className="flex justify-center space-x-4 mb-8">
+        <div className="flex justify-center space-x-4 mb-1">
           <button
         onClick={() => setSelectedCategory("web")}
         className={`px-4 py-2 ${darkMode ? 'text-white' : 'text-gray-900'} ${selectedCategory === "web" ? "underline" : ""}`}
@@ -97,7 +97,12 @@ export default function Projects({ darkMode }: { darkMode: boolean }) {
           </button>
         </div>
 
-        <div className="projects-list">
+        <p className="text-center mb-6 max-w-[400px] text-[14px] mx-auto">
+          A collection of my work, side projects, and experiments. Each project represents a unique challenge and learning experience.
+        </p>
+        <hr className="my-6 border-gray-300 dark:border-gray-700 max-w-3xl mx-auto" />
+
+        <div className="projects-list max-w-3xl mx-auto">
           {projects.map((project, index) => (
         <div key={index} className="mb-8">
           <h3 className="text-xl font-bold flex justify-between items-center">
@@ -108,7 +113,7 @@ export default function Projects({ darkMode }: { darkMode: boolean }) {
             <span>[{index + 1}]</span>
           </h3>
           <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-500'}`}>{project.date}</p>
-          <ul className="list-disc ml-5 mt-2">
+          <ul className="list-disc text-[15px] ml-5 mt-2">
             {project.description.map((desc, idx) => (
           <li key={idx}>{desc}</li>
             ))}

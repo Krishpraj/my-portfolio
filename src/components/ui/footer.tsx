@@ -19,7 +19,7 @@ export default function Footer({ darkMode }: { darkMode: boolean }) {
         </a>
       </div>
       <div className="text-center">
-        <p className="text-sm"> {new Date().getFullYear()} Krish Prajapati </p>
+        <p className="text-sm"> [ 2025 KRISH PRAJAPATI ] </p>
       </div>
     </footer>
   );

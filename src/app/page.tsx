@@ -14,6 +14,7 @@ import { TextReveal } from "@/components/ui/text-reveal";
 import GetInTouch from "@/components/ui/contact";
 import ProjectList from "@/components/ui/list";
 import Projects from "@/components/ui/projects";
+import Footer from "@/components/ui/footer";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -51,8 +52,7 @@ export default function Home() {
       </div>
 
       <ProjectList darkMode={darkMode} />
-
-      <div className="fixed mt-[-137px] left-0 w-full z-50 hover:w-full transition-all duration-300">
+      <div className="fixed bottom-[200px] left-12 z-50 w-auto">
         <Dock iconMagnification={60}>
           <DockIcon>
             <button onClick={() => setDarkMode(!darkMode)} className="text-3xl text-gray-400 hover:text-gray-600">
@@ -128,7 +128,9 @@ export default function Home() {
         <p className="text-md mt-[50px] text-[40px] mb-[-20px] ">[સંપર્ક]</p>
       </div>
         <GetInTouch  darkMode={darkMode}/>
+        <Footer darkMode={darkMode} />
       </div>
+
     
   );
 }
