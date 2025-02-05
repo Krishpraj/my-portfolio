@@ -96,15 +96,20 @@ export default function Home() {
           Waterloo Computer Engineering Student
         </motion.h2>
         
-        <div className="mt-2 text-[12px] font-mono mb-[100px] mx-auto text-center flex items-center justify-center max-w-[30rem] z-0 text-blue-700-400 ">
+        <div className="mt-2 text-[12px] font-mono mb-[100px] mx-auto text-center flex items-center justify-center max-w-[rem] z-0 text-blue-700-400 ">
           <motion.div id="introduction" className="mt-[100px] text-center"></motion.div>
-          <TextReveal className={`mt-[150px] ${darkMode ? 'dark' : ''}`} text="An aspiring software developer passionate about creating innovative open-source software solutions."/>
+          <TextReveal className={`mt-[150px] ${darkMode ? 'dark' : ''}`} text="Innovation thrives where curiosity meets action. The most powerful solutions come from those who dare to challenge the norm, push boundaries, and turn ideas into reality. Keep building, keep learning, and keep creating impact"/>
         </div>
         <ScrollButton />
       </motion.div>
 
       <motion.div id="resume-section" className="mt-[100px] text-center"></motion.div>
-      <MorphingText texts={["About Me" ,"Quick Overview"]}/>
+      <div className="flex justify-center">
+        <h1 className="text-3xl text-[150px] font-bold">About Me</h1>
+      </div>
+      <div className="flex justify-center">
+        <p className="text-md mt-[50px] text-[40px] mb-[-50px] ">[પોર્ટફોલિયો]</p>
+      </div>
       <Resume darkMode={darkMode} />
 
       <motion.div id="personal-projects" className="mt-[100px] text-center"></motion.div>
