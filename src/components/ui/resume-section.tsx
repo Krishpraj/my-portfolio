@@ -10,37 +10,55 @@ interface ResumeProps {
 }
 
 const skillLevels = [
-  { skill: "React", level: 90 },
-  { skill: "Next.js", level: 85 },
-  { skill: "TypeScript", level: 80 },
-  { skill: "Node.js", level: 75 },
-  { skill: "Python", level: 95 },
-  { skill: "Docker", level: 85 },
-  { skill: "Java", level: 80 },
-  { skill: "C++", level: 90 },
+  { skill: "React", level: 90, category: "Frontend" },
+  { skill: "Next.js", level: 85, category: "Frontend" },
+  { skill: "TypeScript", level: 80, category: "Frontend" },
+  { skill: "Tailwind CSS", level: 85, category: "Frontend" },
+  { skill: "Node.js", level: 75, category: "Backend" },
+  { skill: "Express", level: 80, category: "Backend" },
+  { skill: "Python", level: 95, category: "Programming Languages" },
+  { skill: "Flask", level: 85, category: "Backend" },
+  { skill: "Java", level: 80, category: "Programming Languages" },
+  { skill: "C++", level: 90, category: "Programming Languages" },
+  { skill: "MySQL", level: 80, category: "Database" },
+  { skill: "Axios", level: 85, category: "Tools" },
+  { skill: "Git", level: 85, category: "Tools" },
+  { skill: "Linux", level: 80, category: "Tools" },
+  { skill: "Visual Studio Code", level: 90, category: "Tools" },
 ];
 const skillColors: { [key: string]: string } = {
   React: "#61DAFB",
   "Next.js": "#000000",
   TypeScript: "#3178C6",
+  "Tailwind CSS": "#38B2AC",
   "Node.js": "#339933",
+  Express: "#000000",
   Python: "#3776AB",
-  Docker: "#2496ED",
+  Flask: "#2496ED",
   Java: "#007396",
   "C++": "#00599C",
+  MySQL: "#4479A1",
+  Axios: "#5A29E4",
+  Git: "#F05032",
+  Linux: "#FCC624",
+  "Visual Studio Code": "#007ACC",
 };
 
 const interests = [
   "Music",
   "Traveling",
   "Coding",
-  "Basketball",
+  "Badminton",
   "Reading",
-  "Gaming"
+  "Gaming",
+  "Watches",
+  "Keyboards"
 ];
 
 const Resume: React.FC<ResumeProps> = ({ darkMode }) => {
   const [audienceType, setAudienceType] = useState<'recruiter' | 'engineer' | 'classmate'>('recruiter');
+
+  const skillCategories = Array.from(new Set(skillLevels.map(skill => skill.category)));
 
   return (
     <div className={`${darkMode ? "bg-black text-white" : "bg-white text-gray-900"} min-h-screen flex items-center justify-center`}>
@@ -81,13 +99,13 @@ const Resume: React.FC<ResumeProps> = ({ darkMode }) => {
 
         <hr className="my-6 border-gray-300 dark:border-gray-700" />
 
-        {/* Experience and Skills Section */}
+        {/* Experience and Interests Section */}
         <section className="mb-6 flex">
           <div className="w-1/2 pr-4">
-          <h2 className="text-xl font-semibold mb-4 flex items-center">
-            <span>[ EXPERIENCE ]</span>
-            <span className="flex-1 mx-2 "></span>
-            <span>[1]</span>
+            <h2 className="text-xl font-semibold mb-4 flex items-center">
+              <span>[ EXPERIENCE ]</span>
+              <span className="flex-1 mx-2 "></span>
+              <span>[1]</span>
             </h2>
             <div className="space-y-2">
               <div className="flex items-center space-x-3">
@@ -124,40 +142,15 @@ const Resume: React.FC<ResumeProps> = ({ darkMode }) => {
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="w-px bg-gray-300 dark:bg-gray-700 mx-4"></div>
-
-          <div className="w-1/2 pl-4">
-          <h2 className="text-xl font-semibold mb-4 flex items-center">
-            <span>[ SKILLS ]</span>
-            <span className="flex-1 mx-2 "></span>
-            <span>[2]</span>
-            </h2>
-            <div className="space-y-2">
-              {skillLevels.map(({ skill, level }) => (
-                <div key={skill} className="flex items-center space-x-3">
-                  <span className="w-4 h-4 " style={{ backgroundColor: skillColors[skill] }}></span>
-                  <span className="w-24 text-gray-600 dark:text-gray-300 text-sm">{skill}</span>
-                  <div className="flex-1 bg-gray-200 dark:bg-gray-700 h-1 rounded-full max-w-[100px]">
-                    <div
-                      className="bg-blue-500 dark:bg-blue-600 h-1 rounded-full"
-                      style={{ width: `${level}%` }}
-                    ></div>
-                  </div>
-                  <span className="w-8 text-right text-gray-600 dark:text-gray-300 text-sm">{level}%</span>
-                </div>
-              ))}
-            </div>
 
             <hr className="my-6 border-gray-300 dark:border-gray-700" />
 
             {/* Interests Section */}
             <section className="mt-6">
               <h2 className="text-xl font-semibold mb-4 flex items-center">
-                <span>[ INTERESTS ]</span>
+                <span>[ INTERESTS AND HOBBIES ]</span>
                 <span className="flex-1 mx-2"></span>
-                <span>[3]</span>
+                <span>[2]</span>
               </h2>
               <div className="flex flex-wrap gap-2">
                 {interests.map(interest => (
@@ -167,6 +160,36 @@ const Resume: React.FC<ResumeProps> = ({ darkMode }) => {
                 ))}
               </div>
             </section>
+          </div>
+
+          <div className="w-px bg-gray-300 dark:bg-gray-700 mx-4"></div>
+
+          <div className="w-1/2 pl-4">
+            <h2 className="text-xl font-semibold mb-4 flex items-center">
+              <span>[ SKILLS ]</span>
+              <span className="flex-1 mx-2 "></span>
+              <span>[3]</span>
+            </h2>
+            {skillCategories.map(category => (
+              <div key={category} className="mb-4">
+                <h3 className="text-lg font-semibold mb-2">{category}</h3>
+                <div className="space-y-2 text-xs">
+                  {skillLevels.filter(skill => skill.category === category).map(({ skill, level }) => (
+                    <div key={skill} className="flex items-center space-x-3">
+                      <span className="w-4 h-4" style={{ backgroundColor: skillColors[skill] }}></span>
+                      <span className="w-24 text-gray-600 dark:text-gray-300">{skill}</span>
+                      <div className="flex-1 bg-gray-200 dark:bg-gray-700 h-1 rounded-full max-w-[100px]">
+                        <div
+                          className="bg-blue-500 dark:bg-blue-600 h-1 rounded-full"
+                          style={{ width: `${level}%` }}
+                        ></div>
+                      </div>
+                      <span className="w-8 text-right text-gray-600 dark:text-gray-300">{level}%</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
