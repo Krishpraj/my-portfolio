@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import Loading from "@/app/loading";  // Client-side loading component
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,9 +40,11 @@ export default function RootLayout({
     <html lang="en">
     <body className={`${font1.variable} ${font2.variable} antialiased`} style={{ fontFamily: "var(--font-ibm-sans)" }}>
         {/* Loading screen component that prevents content from rendering until loading is complete */}
+        
         <Loading />
         {/* Render children (actual content) only after loading is complete */}
         <>{children}</>
+        <Analytics/>
       </body>
     </html>
   );
