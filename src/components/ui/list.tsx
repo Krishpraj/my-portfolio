@@ -50,7 +50,7 @@ export default function ProjectList({ darkMode }: { darkMode: boolean }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className={`absolute top-1 right-10 text-[120px] font-mono font-bold ${darkMode ? "text-white" : "text-black"}`}
+          className={`absolute top-[-30px] right-10 text-[120px] font-mono font-bold ${darkMode ? "text-white" : "text-black"}`}
         >
           {String(selectedProject).padStart(2, '0')}
         </motion.div>
