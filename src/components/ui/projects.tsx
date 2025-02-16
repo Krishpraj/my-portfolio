@@ -84,16 +84,32 @@ export default function Projects({ darkMode }: { darkMode: boolean }) {
       <div className={`max-w-4xl w-full p-4 ${darkMode ? 'bg-gray-800 text-white' : 'bg-gray-100 text-gray-900'} rounded-lg shadow-lg min-h-[80vh]`}>
         <div className="flex justify-center space-x-4 mb-1">
           <button
-        onClick={() => setSelectedCategory("web")}
-        className={`px-4 py-2 ${darkMode ? 'text-white' : 'text-gray-900'} ${selectedCategory === "web" ? "underline" : ""}`}
+            onClick={() => setSelectedCategory("web")}
+            className={`px-4 py-2 rounded-md transition-colors ${
+              selectedCategory === "web"
+          ? darkMode
+            ? "bg-gray-600 text-white"
+            : "bg-gray-300 text-gray-900"
+          : darkMode
+          ? "text-white hover:bg-gray-600"
+          : "text-gray-900 hover:bg-gray-100"
+            }`}
           >
-        [Web Projects]
+            [Web Projects]
           </button>
           <button
-        onClick={() => setSelectedCategory("mobile")}
-        className={`px-4 py-2 ${darkMode ? 'text-white' : 'text-gray-900'} ${selectedCategory === "mobile" ? "underline" : ""}`}
+            onClick={() => setSelectedCategory("mobile")}
+            className={`px-4 py-2 rounded-md transition-colors ${
+              selectedCategory === "mobile"
+          ? darkMode
+            ? "bg-gray-600 text-white"
+            : "bg-gray-300 text-gray-900"
+          : darkMode
+          ? "text-white hover:bg-gray-600"
+          : "text-gray-900 hover:bg-gray-100"
+            }`}
           >
-        [Mobile Projects]
+            [Mobile Projects]
           </button>
         </div>
 

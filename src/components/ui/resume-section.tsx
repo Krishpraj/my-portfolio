@@ -70,24 +70,36 @@ const Resume: React.FC<ResumeProps> = ({ darkMode }) => {
           <div className="flex justify-center gap-2">
             <button 
               onClick={() => setAudienceType('recruiter')}
-              className={`px-3 py-1 rounded-lg ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-200'} transition-colors ${audienceType === 'recruiter' ? 'underline' : ''}`}
+              className={`px-3 py-1 rounded-lg ${
+              audienceType === 'recruiter' 
+                ? (darkMode ? 'bg-gray-600' : 'bg-gray-300')
+                : (darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-200')
+              } transition-colors`}
             >
              [ For Recruiters ]
             </button>
             <button 
               onClick={() => setAudienceType('engineer')}
-              className={`px-3 py-1 rounded-lg ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-200'} transition-colors ${audienceType === 'engineer' ? 'underline' : ''}`}
+              className={`px-3 py-1 rounded-lg ${
+              audienceType === 'engineer'
+                ? (darkMode ? 'bg-gray-600' : 'bg-gray-300')
+                : (darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-200')
+              } transition-colors`}
             >
              [ For Engineers ]
             </button>
             <button 
               onClick={() => setAudienceType('classmate')}
-              className={`px-3 py-1 rounded-lg ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-200'} transition-colors ${audienceType === 'classmate' ? 'underline' : ''}`}
+              className={`px-3 py-1 rounded-lg ${
+              audienceType === 'classmate'
+                ? (darkMode ? 'bg-gray-600' : 'bg-gray-300')
+                : (darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-200')
+              } transition-colors`}
             >
             [ For Classmates ]
             </button>
           </div>
-          <p className={`mt-2 text-sm text-gray-700 ${darkMode ? "text-gray-300" : ""} max-w-md mx-auto`}>
+          <p className={`mt-2 text-sm ${darkMode ? "text-gray-300" : " text-gray-700"} max-w-md mx-auto`}>
             {audienceType === 'recruiter' 
               ? "Hi, I'm Krish. A Computer Engineering student with a passion for building innovative, scalable solutions and leveraging cutting-edge technologies to drive impact in real-world applications."
               : audienceType === 'engineer'
@@ -177,14 +189,14 @@ const Resume: React.FC<ResumeProps> = ({ darkMode }) => {
                   {skillLevels.filter(skill => skill.category === category).map(({ skill, level }) => (
                     <div key={skill} className="flex items-center space-x-3">
                       <span className="w-4 h-4" style={{ backgroundColor: skillColors[skill] }}></span>
-                      <span className="w-24 text-gray-600 dark:text-gray-300">{skill}</span>
+                        <span className={`w-24 ${darkMode ? "text-gray-300" : "text-gray-600"}`}>{skill}</span>
                       <div className="flex-1 bg-gray-200 dark:bg-gray-700 h-1 rounded-full max-w-[100px]">
                         <div
                           className="bg-blue-500 dark:bg-blue-600 h-1 rounded-full"
                           style={{ width: `${level}%` }}
                         ></div>
                       </div>
-                      <span className="w-8 text-right text-gray-600 dark:text-gray-300">{level}%</span>
+                        <span className={`w-8 text-right ${darkMode ? "text-gray-300" : "text-gray-600"}`}>{level}%</span>
                     </div>
                   ))}
                 </div>
